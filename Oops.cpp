@@ -25,13 +25,7 @@ public:
     /* ------------------------------------------
     -------------Constructor method--------------
     -------------------------------------------*/
-    employee(string empName, string empCompany, string empPosition, int empAge){
-        name = empName;
-        company = empCompany;
-        position = empPosition;
-        age = empAge;
-    }
-
+    employee(string empName, string empCompany, string empPosition, int empAge) : name(empName), company(empCompany), position(empPosition), age(empAge){}
 
     /* ------------------------------------------
     --------------Destructor method--------------
@@ -48,27 +42,22 @@ public:
         cout << "Position: " << position << endl;
         cout << "Age: " << age << endl;
     }
+    
     /* ------------------------------------------
     ----Setters and Getters (encapsulation)------
     --------------------------------------------*/
-    void setName(string empName){
-        name = empName;
-    }
-    string getName(){
-        return name;
-    }
-    void setCompany(string empCompany){
-        company = empCompany;
-    }
-    string getCompany(){
-        return company;
-    }
-    void setPosition(string empPosition){
-        position = empPosition;
-    }
-    string getPosition(){
-        return position;
-    }
+    void setName(string empName){ name = empName; }
+
+    string getName() const{ return name; }
+
+    void setCompany(string empCompany){ company = empCompany; }
+
+    string getCompany() const { return company; }
+
+    void setPosition(string empPosition){ position = empPosition; }
+
+    string getPosition() const { return position;}
+
     void setAge(int empAge){
         if(empAge >= 18){
             age = empAge;
@@ -77,9 +66,9 @@ public:
             cout << "Age must be at least 18." << endl;
         }
     }
-    int getAge(){
-        return age;
-    } 
+
+    int getAge() const { return age;} 
+
     /*-------------------------------------------
     ----Abstract method implementation----------
     --------------------------------------------*/
